@@ -1,6 +1,7 @@
 import NavBar from '@/components/global/navbar'
 import LandingScreen from '@/components/home/landing-screen'
-import Image from 'next/image'
+import Intro from '@/components/home/intro'
+import Footer from '@/components/global/footer'
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       <div data-theme="retro">
         <NavBar />
         <LandingScreen />
-        <div>hello</div>
+        <Intro />
+        <Footer />
       </div>
     </main>
   )
