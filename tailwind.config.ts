@@ -15,6 +15,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: ["retro", "dark"],
+  },
+  plugins: [require("@tailwindcss/typography"), require("daisyui"), require('tailwindcss-animated')],
 }
 export default config
