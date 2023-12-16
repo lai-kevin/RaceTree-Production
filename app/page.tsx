@@ -2,7 +2,9 @@ import NavBar from '@/components/global/navbar'
 import LandingScreen from '@/components/home/landing-screen'
 import Intro from '@/components/home/intro'
 import Footer from '@/components/global/footer'
-import Games from '@/components/home/games'
+import Stewarding from '@/components/home/stewarding'
+import Profiles from '@/components/home/profiles'
+import Represent from '@/components/home/represent'
 
 export default function Home() {
   return (
@@ -11,7 +13,9 @@ export default function Home() {
         <NavBar />
         <LandingScreen />
         <Intro />
-        <Games />
+        <Stewarding />
+        <Profiles />
+        <Represent />
         <Footer />
       </div>
     </main>

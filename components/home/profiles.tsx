@@ -4,9 +4,10 @@ import crash from "../../images/crash.jpg";
 
 import { useEffect, useRef } from "react";
 
-const Games = () => {
+const Profiles = () => {
   const divRef = useRef<HTMLDivElement>(null);
 
+  // Intersection Observer. Only animate when the element is in view
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -29,17 +30,16 @@ const Games = () => {
   }, []);
 
   return (
-    <div className="bg-neutral p-5">
-      <div ref={divRef} className="rounded-3xl bg-primary animate-once animate-ease-in">
+    <div className="bg-neutral px-5 pb-5">
+      <div ref={divRef} className="rounded-3xl bg-secondary animate-ease-in">
         <div className="p-5">
           <Image src={crash} alt="Crash" className="rounded-2xl" />
           <h1 className="text-2xl text-neutral pb-5 pt-5">
-            Crowdsourced Stewarding
+            Verified Profiles
           </h1>
           <p className="font-mono">
-            Upload clips of racing incidents for RaceTree members to judge!
-            Accident or racing incident? You decide! Drivers that cause
-            incidents will be penalized and have their reputation affected.
+            Connect your iRacing account or Steam account to verify your profile.
+            Verified profiles will have a badge on their profile and will be able to standout from the crowd.
           </p>
         </div>
       </div>
@@ -47,4 +47,4 @@ const Games = () => {
   );
 };
 
-export default Games;
+export default Profiles;

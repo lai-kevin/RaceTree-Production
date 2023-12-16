@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="footer footer-center p-10 bg-neutral text-secondary">
             <aside>
-                <h2 className="font-bold text-2xl">RaceTree</h2>
+                <h2 className="font-bold text-2xl">RaceTree.</h2>
                 <p className="font-bold">
                     Providing the Sim Racing Community tech since 2023
                 </p>
