@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import crash from "../../images/crash.jpg";
+import helmets from "../../images/helmets.jpg";
 
 import { useEffect, useRef } from "react";
 
@@ -30,13 +30,13 @@ const Represent = () => {
   }, []);
 
   return (
-    <div className="bg-neutral px-5 pb-5">
-      <div ref={divRef} className="rounded-3xl bg-secondary animate-ease-in">
-        <div className="p-5">
-          <Image src={crash} alt="Crash" className="rounded-2xl" />
+    <div className="px-5 pb-5 h-full">
+      <div ref={divRef} className="rounded-3xl bg-secondary animate-ease-in min-h-[500px] h-full">
+        <div className="p-10">
+          <Image src={helmets} alt="Helmets" className="rounded-2xl" />
           <h1 className="text-2xl text-neutral pb-5 pt-5">
             Profile Customization
-          </h1>
+          </h1> 
           <p className="font-mono">
             With RaceTree, you can customize your profile to your liking. 
             Represent your racing team or league with a custom banner. 

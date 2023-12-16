@@ -1,10 +1,10 @@
 'use client'
 import Image from "next/image";
-import crash from "../../images/crash.jpg";
+import cheater from "../../images/cheater.jpg";
 
 import { useEffect, useRef } from "react";
 
-const Stewarding = () => {
+const Cheaters = () => {
   const divRef = useRef<HTMLDivElement>(null);
 
   // Intersection Observer. Only animate when the element is in view
@@ -33,14 +33,13 @@ const Stewarding = () => {
     <div className="px-5 pb-5 h-full">
       <div ref={divRef} className="rounded-3xl bg-secondary animate-ease-in min-h-[500px] h-full">
         <div className="p-10">
-          <Image src={crash} alt="Crash" className="rounded-2xl" />
+          <Image src={cheater} alt="Crash" className="rounded-2xl" />
           <h1 className="text-2xl text-neutral pb-5 pt-5">
-            Crowdsourced Stewarding
+            Report Cheaters
           </h1>
           <p className="font-mono">
-            Upload clips of racing incidents for RaceTree members to judge!
-            Accident or racing incident? You decide! Drivers that cause
-            incidents will be penalized and have their reputation affected.
+            Reporting cheaters and hackers keeps the community clean. 
+            Cheaters will have a negative reputation and will have a permanent mark on their profile.
           </p>
         </div>
       </div>
@@ -48,4 +47,4 @@ const Stewarding = () => {
   );
 };
 
-export default Stewarding;
+export default Cheaters;

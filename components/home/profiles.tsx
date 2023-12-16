@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import crash from "../../images/crash.jpg";
+import steam from "../../images/steam.jpg";
 
 import { useEffect, useRef } from "react";
 
@@ -30,10 +30,10 @@ const Profiles = () => {
   }, []);
 
   return (
-    <div className="bg-neutral px-5 pb-5">
-      <div ref={divRef} className="rounded-3xl bg-secondary animate-ease-in">
-        <div className="p-5">
-          <Image src={crash} alt="Crash" className="rounded-2xl" />
+    <div className="px-5 pb-5 h-full">
+      <div ref={divRef} className="rounded-3xl bg-secondary animate-ease-in min-h-[500px] h-full">
+        <div className="p-10">
+          <Image src={steam} alt="Crash" className="rounded-2xl" />
           <h1 className="text-2xl text-neutral pb-5 pt-5">
             Verified Profiles
           </h1>
