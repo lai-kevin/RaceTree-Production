@@ -13,16 +13,20 @@ export default function Home() {
       <div data-theme="retro">
         <NavBar />
         <LandingScreen />
-        <Intro />
         <div className="md:hidden bg-neutral">
-          <Stewarding />
-          <Represent />
-          <Cheaters />
-          <Profiles />
+        <Intro />
+          <div className="bg-base-200 rounded-2xl p-5">
+            <h1 className="text-6xl pl-5 mb-5">Features: </h1>
+            <Stewarding />
+            <Represent />
+            <Cheaters />
+            <Profiles />
+          </div>
         </div>
         <div className="flex justify-center bg-neutral">
           <div className="invisible hidden flex-col md:flex md:visible">
-            <div className="bg-accent p-5 m-10 rounded-3xl">
+          <Intro />
+            <div className="bg-base-200 p-5 m-10 rounded-3xl max-w-screen-2xl">
               <h1 className="text-6xl pl-10">Features: </h1>
               <div className="flex flex-row mt-5">
                 <div className="w-1/2">

@@ -31,7 +31,7 @@ const Cheaters = () => {
 
   return (
     <div className="px-5 pb-5 h-full">
-      <div ref={divRef} className="rounded-3xl bg-secondary animate-ease-in min-h-[500px] h-full">
+      <div ref={divRef} className="rounded-3xl animate-ease-in min-h-[500px] h-full">
         <div className="p-10">
           <Image src={cheater} alt="Crash" className="rounded-2xl" />
           <h1 className="text-2xl text-neutral pb-5 pt-5">
