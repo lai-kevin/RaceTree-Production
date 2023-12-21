@@ -1,7 +1,7 @@
-import { UserButton } from "@clerk/nextjs";
+
 const NavBar = () => {
   return (
-    <div className="navbar bg-base-100 absolute">
+    <div className="navbar bg-base-100" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 999 }}>
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">RaceTree</a>
       </div>
@@ -34,6 +34,7 @@ const NavBar = () => {
             </li>
             <li>
               <a>Logout</a>
+
             </li>
           </ul>
         </div>
