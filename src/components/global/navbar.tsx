@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 const NavBar = () => {
   return (
     <div className="navbar bg-base-100 absolute">
