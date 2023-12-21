@@ -1,11 +1,11 @@
-import NavBar from "@/components/global/navbar";
-import LandingScreen from "@/components/home/landing-screen";
-import Intro from "@/components/home/intro";
-import Footer from "@/components/global/footer";
-import Stewarding from "@/components/home/stewarding";
-import Profiles from "@/components/home/profiles";
-import Represent from "@/components/home/represent";
-import Cheaters from "@/components/home/cheaters";
+import NavBar from "@/src/components/global/navbar";
+import LandingScreen from "@/src/components/home/landing-screen";
+import Intro from "@/src/components/home/intro";
+import Footer from "@/src/components/global/footer";
+import Stewarding from "@/src/components/home/stewarding";
+import Profiles from "@/src/components/home/profiles";
+import Represent from "@/src/components/home/represent";
+import Cheaters from "@/src/components/home/cheaters";
 
 export default function Home() {
   return (
