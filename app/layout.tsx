@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import NavBar from "@/src/components/global/navbar";
 
 const silkScreen = localFont({ src: "../style/fonts/Silkscreen-Regular.ttf" });
 

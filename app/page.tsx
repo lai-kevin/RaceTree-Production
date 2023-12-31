@@ -13,8 +13,11 @@ export default function Home() {
         <NavBar />
         <main>
           <LandingScreen />
+
+          { /* Mobile View */}
           <div className="md:hidden bg-neutral">
             <Intro />
+            { /* Features */}
             <div className="bg-base-200 rounded-2xl p-5">
               <h1 className="text-6xl pl-5 mb-5">Features: </h1>
               <Stewarding />
@@ -23,9 +26,12 @@ export default function Home() {
               <Profiles />
             </div>
           </div>
+          
+          { /* Desktop View */}
           <div className="flex justify-center bg-neutral">
             <div className="invisible hidden flex-col md:flex md:visible">
               <Intro />
+              { /* Features */}
               <div className="bg-base-200 p-5 m-10 rounded-3xl max-w-screen-2xl">
                 <h1 className="text-6xl pl-10">Features: </h1>
                 <div className="flex flex-row mt-5">
