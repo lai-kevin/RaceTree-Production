@@ -18,7 +18,7 @@ export default function Profile() {
     <div data-theme="retro">
       <NavBar />
       <main>
-        <div className="card shadow-xl min-h-screen pt-[4rem] bg-base-100">
+        <div className="card shadow-xl min-h-screen pt-[4rem] bg-neutral">
           <Mobile>
             <User />
             <AboutMe />
