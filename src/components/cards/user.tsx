@@ -3,7 +3,7 @@ const User = () => {
   const src =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcvJ_fTuGojlhWGEDF18duOJxGADfO1g1YdA&usqp=CAU";
   return (
-    <div className="bg-base-100 rounded-2xl p-5 m-5">
+    <div className="bg-secondary rounded-2xl p-5 m-5">
       <figure className="px-10 pt-10">
         <Image
           loader={() => src}

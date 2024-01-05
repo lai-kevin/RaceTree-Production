@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 const Mobile = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="md:hidden bg-neutral">
+    <div className="md:hidden">
       {children}
     </div>
     );

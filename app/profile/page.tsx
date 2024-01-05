@@ -9,6 +9,8 @@ import User from "@/src/components/cards/user";
 import AboutMe from "@/src/components/cards/aboutme";
 import Leagues from "@/src/components/cards/leagues";
 import Desktop from "@/src/components/layout/desktop";
+import Clips from "@/src/components/cards/clips";
+import Games from "@/src/components/cards/games";
 
 export default function Profile() {
   const { isSignedIn, user, isLoaded } = useUser();
@@ -16,21 +18,25 @@ export default function Profile() {
     <div data-theme="retro">
       <NavBar />
       <main>
-        <div className="card shadow-xl min-h-screen bg-neutral pt-[4rem]">
+        <div className="card shadow-xl min-h-screen pt-[4rem] bg-base-100">
           <Mobile>
             <User />
             <AboutMe />
-            <Leagues />  
+            <Leagues />
+            <Games /> 
+            <Clips />
           </Mobile>
 
           <Desktop>
-            <div className="flex flex-row">
+            <div className="flex flex-row max-h-screen">
               <div className="w-1/2">
                 <User />
                 <AboutMe />
               </div>
               <div className="w-1/2">
                 <Leagues />
+                <Games />
+                <Clips />
               </div>
             </div>
           </Desktop>
