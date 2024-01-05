@@ -9,6 +9,7 @@ export default function Profile() {
     <div data-theme="retro">
       <NavBar />
       <main>
+        
       </main>
     </div>
   );
