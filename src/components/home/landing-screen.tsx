@@ -14,7 +14,11 @@ const LandingScreen = () => {
             clips of racing incidents and highlights for RaceTree members to
             judge!
           </p>
-          <button className="btn btn-accent animate-bounce">Create your profile</button>
+          <div className="flex flex-col gap-2 animate-jump">
+            <button className="btn btn-accent">Browse Profiles</button>
+            <button className="btn btn-accent">Create Your Profile</button>
+            <button className="btn btn-accent">RaceTree API</button>
+          </div>
         </div>
       </div>
     </div>
