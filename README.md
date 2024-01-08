@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RaceTree - Your Hub for Sim Racing Enthusiasts 🏁
 
-## Getting Started
+RaceTree is a web application inspired by the simplicity of LinkTree and the collaborative spirit of Reddit, specifically designed for Sim Racing professionals and enthusiasts. Whether you're a seasoned pro or a passionate hobbyist, RaceTree is the platform to showcase your racing accolades, lookup your fellow racers, and engage in crowdsourced stewarding.
 
-First, run the development server:
+We also provide a publically accessible API to access RaceTree's database, providing race communities and administrators tools for vetting their racers.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🌐 [RaceTree on Heroku](https://racetree-b73ed5acefb7.herokuapp.com/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🌐 [RaceTree on Vercel](https://racetree.vercel.app/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
+![RaceTree Landing](https://github.com/lai-kevin/RaceTree-Production/assets/96455410/43f9e547-7113-4532-9b22-e9e94fc6f50c)
+### 1. Personalized Profiles
 
-## Learn More
+- Create your free profile to showcase your racing skills.
+- Add details about yourself, your sim-racing games, and clips.
+- Customize your profile with a profile picture and bio.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Crowdsourced Stewarding
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Engage with the community by participating in crowdsourced stewarding.
+- Upload racing clips, incidents, or highlights for fellow RaceTree members to review and judge.
+- Build a reputation based on your fairness and sportsmanship.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 3. Publically Accessible API
 
-## Deploy on Vercel
+- Race Communities can vet new and current players in their communities with our RaceTree API, fostering safe and inclusive communities.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/racetree-nextjs.git
+
+2. Install Dependencies:
+   ```bash
+   npm install
+   
+4. Run the development server:
+   ```bash
+   npm run dev
+5. Open your browser and visit http://localhost:3000 to view the application locally.
+
+#### Technologies Used
+- Next.js
+- Tailwind CSS
+- Docker
+- Prisma
+- PostgreSQL
+- Supabase
+- Clerk
+- 
+### License
+RaceTree is licensed under the MIT License
+
+
