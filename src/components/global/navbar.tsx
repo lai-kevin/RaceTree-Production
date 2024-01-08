@@ -44,6 +44,7 @@ const NavBar = () => {
         <a className="btn btn-ghost text-xl">RaceTree</a>
       </div>
       <div className="flex-none"></div>
+      <a className="btn btn-ghost btn-sm rounded-btn bg-primary">Sign Up</a>
     </div>
   );
 };
