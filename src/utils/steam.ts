@@ -57,12 +57,3 @@ export const getOwnedGames = (steamID64: string) => {
 export const getGameImageURL = (gameID: string) => {
   return `https://cdn.akamai.steamstatic.com/steam/apps/${gameID}/header.jpg`
 }
-
-export const getYoutubeVideoID = (youtubeURL: string) => {
-  const url = new URL(youtubeURL);
-  return url.searchParams.get("v");
-}
-
-export const getYoutubeThubmnailURL = (youtubeURL: string) => {
-  return `https://img.youtube.com/vi/${getYoutubeVideoID(youtubeURL)}/0.jpg`
-}
