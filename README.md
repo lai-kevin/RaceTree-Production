@@ -1,7 +1,5 @@
 # RaceTree - Your Hub for Sim Racing Enthusiasts 🏁
 
-![RaceTree Landing](https://github.com/lai-kevin/RaceTree-Production/assets/96455410/8da82c91-41b1-4b60-85bb-1224ee024ebb)
-
 RaceTree is a web application inspired by the simplicity of LinkTree and the collaborative spirit of Reddit, specifically designed for Sim Racing professionals and enthusiasts. Whether you're a seasoned pro or a passionate hobbyist, RaceTree is the platform to showcase your racing accolades, lookup your fellow racers, and engage in crowdsourced stewarding.
 
 We also provide a publically accessible API to access RaceTree's database, providing race communities and administrators tools for vetting their racers.
@@ -13,7 +11,7 @@ We also provide a publically accessible API to access RaceTree's database, provi
 🌐 [RaceTree on Vercel](https://racetree.vercel.app/)
 
 ## Features
-
+![RaceTree Landing](https://github.com/lai-kevin/RaceTree-Production/assets/96455410/43f9e547-7113-4532-9b22-e9e94fc6f50c)
 ### 1. Personalized Profiles
 
 - Create your free profile to showcase your racing skills.
