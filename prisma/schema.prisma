@@ -50,7 +50,6 @@ model Game {
   id        Int      @id @default(autoincrement())
   name      String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
   leagues   League[]
   teams     Team[]
   clips     Clip[]
