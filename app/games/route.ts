@@ -1,6 +1,15 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
+/**
+ * Retrieves game data based on query parameters.
+ * If 'id' is provided, returns the game with that id.
+ * If 'name' is provided, returns the game with that name.
+ * If no query parameters are provided, returns all games.
+ * 
+ * @param request - The request object containing the URL and query parameters.
+ * @returns A JSON response with the game data or an error message.
+ */
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("id");
@@ -14,7 +23,7 @@ export async function GET(request: Request) {
       });
 
       if (!game) {
-        return Response.json({ message: "Game not found" }, { status: 404 });
+        return Response.json({ message: "Game not yet Registered" }, { status: 404 });
       }
       return Response.json(game, { status: 200 });
     }
@@ -26,7 +35,7 @@ export async function GET(request: Request) {
       });
 
       if (!game) {
-        return Response.json({ message: "Game not found" }, { status: 404 });
+        return Response.json({ message: "Game not yet Registered" }, { status: 404 });
       }
       return Response.json(game, { status: 200 });
     }
@@ -46,3 +55,4 @@ export async function GET(request: Request) {
     await prisma.$disconnect();
   }
 }
+
