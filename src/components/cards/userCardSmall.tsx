@@ -1,12 +1,14 @@
 import GridItem from "../layout/gridItem";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface UserProfileProps {
   profilePicture: string | undefined;
   reputation: number;
   username: string;
   nickname: string;
+  racetreeId: string;
 }
 
 const UserProfile: React.FC<UserProfileProps> = ({
@@ -14,6 +16,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
   reputation,
   username,
   nickname,
+  racetreeId,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -48,7 +51,9 @@ const UserProfile: React.FC<UserProfileProps> = ({
             <h3>Reputation {reputation}</h3>
           </div>
           <div className="items-center gap-5 text-sm mt-5">
-            <button className="btn bg-accent">View Profile</button>
+            <Link href={`/profile/${racetreeId}`}>
+              <button className="btn bg-accent">View Profile</button>
+            </Link>
           </div>
         </div>
       </div>

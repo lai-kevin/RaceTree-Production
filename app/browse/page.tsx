@@ -56,6 +56,7 @@ const users4 = [
 ];
 
 interface UserResponse {
+  id: number;
   steamid: string;
   name: string;
   reputation: number;
@@ -134,6 +135,7 @@ export default function Browse() {
                 reputation={user.reputation}
                 username={user.name}
                 nickname={user.nickname}
+                racetreeId={user.id}
               />
             ))}
           </Grid>
