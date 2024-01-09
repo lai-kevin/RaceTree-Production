@@ -6,8 +6,6 @@ We also provide a publically accessible API to access RaceTree's database, provi
 
 ## Live Demo
 
-🌐 [RaceTree on Heroku](https://racetree-b73ed5acefb7.herokuapp.com/)
-
 🌐 [RaceTree on Vercel](https://racetree.vercel.app/)
 
 ## Features
