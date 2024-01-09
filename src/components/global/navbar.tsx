@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ProfileButton = () => {
   return (
     <div className="dropdown dropdown-end">
@@ -47,10 +49,14 @@ const NavBar:React.FC<NavBarProps> = ({mode}) => {
       style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 999 }}
     >
       <div className="flex-1">
-        <a className={`btn btn-ghost text-xl ${textColor}`}>RaceTree</a>
+      <Link href="/">
+        <button className={`btn btn-ghost text-xl ${textColor}`}>RaceTree</button>
+      </Link>
       </div>
       <div className="flex-none"></div>
-      <a className="btn btn-ghost btn-sm rounded-btn bg-primary">Sign Up</a>
+      <Link href="/sign-up">
+      <button className="btn btn-ghost btn-sm rounded-btn bg-primary">Sign Up</button>
+      </Link>
     </div>
   );
 };

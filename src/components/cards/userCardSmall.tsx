@@ -22,7 +22,6 @@ const UserProfile: React.FC<UserProfileProps> = ({
       setIsLoading(false);
     }
   }, [profilePicture]);
-
   return (
     <GridItem>
       <div className="card-body w-[300px] h-[450px] bg-base-100 rounded-xl">

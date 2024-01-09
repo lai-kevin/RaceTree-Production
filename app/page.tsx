@@ -12,7 +12,6 @@ export default function Home() {
   return (
     <Frame>
       <LandingScreen />
-
       {/* Mobile View */}
       <div className="md:hidden bg-neutral">
         <Intro />
@@ -25,7 +24,6 @@ export default function Home() {
           <Profiles />
         </div>
       </div>
-
       {/* Desktop View */}
       <div className="flex justify-center bg-neutral">
         <div className="invisible hidden flex-col md:flex md:visible">
@@ -52,7 +50,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Footer />
     </Frame>
   );
 }

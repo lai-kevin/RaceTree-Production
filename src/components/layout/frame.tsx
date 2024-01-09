@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "@/src/components/global/navbar";
+import Footer from "../global/footer";
 
 type FrameProps = {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ const Frame: React.FC<FrameProps> = ({
       >
         {children}
       </main>
+      <Footer />
     </div>
   );
 };
