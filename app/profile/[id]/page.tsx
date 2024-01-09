@@ -24,7 +24,6 @@ interface UserResponse {
 export default function Profile({ params }: { params: { id: string } }) {
   const [user, setUser] = useState<any>(null);
   const [steamSummary, setSteamSummary] = useState<any>(null);
-  console.log(steamSummary)
   // Fetch steam user and racetree user
   useEffect(() => {
     const protocal = window.location.protocol;
@@ -46,11 +45,10 @@ export default function Profile({ params }: { params: { id: string } }) {
         setUser(raceTreeUser);
       });
   }, [params.id]);
-  console.log(user)
   return (
     <Frame navMode="dark" className="pt-[4rem]">
       <div className="shadow-xl min-h-screen bg-neutral">
-        {steamSummary && user && (
+        {steamSummary && user ? (
           <>
             <Mobile>
               <User
@@ -77,7 +75,7 @@ export default function Profile({ params }: { params: { id: string } }) {
                     views={user.views}
                     aboutme={user.aboutme}
                   />
-                  <AboutMe />
+                  <AboutMe aboutMe={user.aboutMe}/>
                 </div>
                 <div className="w-1/2">
                   <Games />
@@ -86,6 +84,10 @@ export default function Profile({ params }: { params: { id: string } }) {
               </div>
             </Desktop>
           </>
+        ) : (
+          <div className="flex justify-center items-center h-screen">
+            <h1 className="animate-bounce text-white text-4xl">Loading...</h1>
+          </div>
         )}
       </div>
     </Frame>

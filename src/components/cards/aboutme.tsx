@@ -2,7 +2,6 @@ interface AboutMeProps {
   aboutMe: string;
 }
 const AboutMe = ({aboutMe} : AboutMeProps) => {
-  console.log(aboutMe)
   return (
     <div className="bg-base-100 rounded-2xl m-5">
       <div className="card-body p-5">

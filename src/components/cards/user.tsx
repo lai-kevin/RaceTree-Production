@@ -12,7 +12,6 @@ interface UserProps {
 }
 const User = (props: UserProps) => {
   const [isLoading, setIsLoading] = useState(true);
-  console.log(props);
 
   useEffect(() => {
     if (props.profilePicture) {

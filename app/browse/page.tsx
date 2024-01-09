@@ -78,6 +78,7 @@ const TextLargeCentered: React.FC<TextLargeCenteredProps> = ({
 };
 
 export default function Browse() {
+  const [isLoading, setIsLoading] = useState(true);
   const [users, setUsers] = useState<UserResponse[]>([]);
   const [steamUsers, setSteamUsers] = useState<UserResponse[]>([]);
 
@@ -93,6 +94,7 @@ export default function Browse() {
         .then((res) => res.json())
         .then((data): void => {
           setSteamUsers(data);
+          setIsLoading(false);
         });
     };
 
@@ -118,6 +120,7 @@ export default function Browse() {
       <SearchBar className="px-4 py-2 m-5 w-96 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" />
 
       <div className="flex justify-center">
+        {!isLoading ? (
           <Grid columns={1} gap={3} className="p-5 max-w-7xl ">
             {users.map((user: UserResponse) => (
               <UserProfile
@@ -134,6 +137,11 @@ export default function Browse() {
               />
             ))}
           </Grid>
+        ) : (
+          <div className="flex justify-center align-middle items-center h-96">
+            <div className="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-white"></div>
+          </div>
+        )}
       </div>
     </Frame>
   );
