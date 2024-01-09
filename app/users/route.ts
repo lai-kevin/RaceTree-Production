@@ -56,6 +56,7 @@ export async function GET(request: Request) {
           views: true,
           reputation: true,
         },
+
       });
 
       if (!steamAccount) {
