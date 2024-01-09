@@ -18,6 +18,7 @@ interface UserResponse {
   name: string;
   profilePicture: string;
   reputation: number;
+  aboutMe: string;
 }
 
 export default function Profile({ params }: { params: { id: string } }) {
@@ -45,7 +46,7 @@ export default function Profile({ params }: { params: { id: string } }) {
         setUser(raceTreeUser);
       });
   }, [params.id]);
-
+  console.log(user)
   return (
     <Frame navMode="dark" className="pt-[4rem]">
       <div className="shadow-xl min-h-screen bg-neutral">
@@ -58,8 +59,9 @@ export default function Profile({ params }: { params: { id: string } }) {
                 username={user.name}
                 nickname={user.nickname}
                 views={user.views}
+                aboutme={user.aboutMe}
               />
-              <AboutMe />
+              <AboutMe aboutMe={user.aboutMe} />
               <Games />
               <Clips />
             </Mobile>
@@ -73,6 +75,7 @@ export default function Profile({ params }: { params: { id: string } }) {
                     username={user.name}
                     nickname={user.nickname}
                     views={user.views}
+                    aboutme={user.aboutme}
                   />
                   <AboutMe />
                 </div>

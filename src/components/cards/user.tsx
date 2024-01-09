@@ -8,6 +8,7 @@ interface UserProps {
   username: string;
   nickname: string;
   views: number;
+  aboutme: string;
 }
 const User = (props: UserProps) => {
   const [isLoading, setIsLoading] = useState(true);
