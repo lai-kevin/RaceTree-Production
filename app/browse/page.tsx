@@ -83,12 +83,13 @@ export default function Browse() {
 
   // Fetch users
   useEffect(() => {
+    const protocal = window.location.protocol;
     const fetchSteamUsers = async (raceTreeUsers: UserResponse[]) => {
       let steamIds = `[${Array.from(
         raceTreeUsers,
         (raceTreeUser: UserResponse) => raceTreeUser.steamId
       ).join(",")}]`;
-      fetch(`http://localhost:3000/info?steam_ids=${steamIds}`)
+      fetch(`${protocal}//${window.location.host}/info?steam_ids=${steamIds}`)
         .then((res) => res.json())
         .then((data): void => {
           setSteamUsers(data);
@@ -96,7 +97,7 @@ export default function Browse() {
     };
 
     // Fetch users
-    fetch("http://localhost:3000/users/browse")
+    fetch(`${protocal}//${window.location.host}/users/browse`)
       .then((res) => res.json())
       .then((raceTreeUsers): void => {
         fetchSteamUsers(raceTreeUsers);
