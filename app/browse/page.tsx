@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import Frame from "@/src/components/layout/frame";
 import Grid from "@/src/components/layout/grid";
 import UserProfile from "@/src/components/cards/userCardSmall";

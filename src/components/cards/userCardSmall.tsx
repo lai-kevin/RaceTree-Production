@@ -8,7 +8,7 @@ interface UserProfileProps {
   reputation: number;
   username: string;
   nickname: string;
-  racetreeId: string;
+  racetreeId: number;
 }
 
 const UserProfile: React.FC<UserProfileProps> = ({
