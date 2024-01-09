@@ -18,14 +18,15 @@ export const getSteamID64 = (steamUserName: string) => {
   });
 };
 
-export const getPlayerSummary = (steamID64: string) => {
+export const getPlayerSummary = (steamID64Array: string) => {
   return new Promise((resolve, reject) => {
-    const url = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.STEAM_API_KEY}&steamids=${steamID64}`;
+    const url = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.STEAM_API_KEY}&steamids=${steamID64Array}`;
+
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         if (data.response.players.length > 0) {
-          resolve(data.response.players[0]);
+          resolve(data.response.players);
         } else {
           reject("No player found");
         }
@@ -38,10 +39,13 @@ export const getPlayerSummary = (steamID64: string) => {
 
 export const getOwnedGames = (steamID64: string) => {
   return new Promise((resolve, reject) => {
-    const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${steamID64}&format=json&include_appinfo=true`;
+    const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${steamID64}&format=json`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
+        if (!data.response.games) {
+          reject("No games found");
+        }
         if (data.response.games.length > 0) {
           resolve(data.response.games);
         } else {
