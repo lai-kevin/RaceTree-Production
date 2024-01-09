@@ -21,7 +21,6 @@ export const getSteamID64 = (steamUserName: string) => {
 export const getPlayerSummary = (steamID64Array: string) => {
   return new Promise((resolve, reject) => {
     const url = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.STEAM_API_KEY}&steamids=${steamID64Array}`;
-
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
