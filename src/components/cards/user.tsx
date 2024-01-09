@@ -9,7 +9,7 @@ const User = () => {
           loader={() => src}
           src={src}
           alt="Profile Picture"
-          className="rounded-xl"
+          className="rounded-xl mx-auto" // Add mx-auto class to center the image
           width={300}
           height={300}
         />

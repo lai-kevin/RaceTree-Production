@@ -16,8 +16,8 @@ import Frame from "@/src/components/layout/frame";
 export default function Profile() {
   const { isSignedIn, user, isLoaded } = useUser();
   return (
-    <Frame>
-      <div className="card shadow-xl min-h-screen bg-neutral">
+    <Frame navMode="dark" className="pt-[4rem]">
+      <div className="shadow-xl min-h-screen bg-neutral">
         <Mobile>
           <User />
           <AboutMe />

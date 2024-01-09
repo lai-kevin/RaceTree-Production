@@ -67,9 +67,9 @@ const TextLargeCentered: React.FC<TextLargeCenteredProps> = ({ text, className }
 
 export default function Browse() {
   return (
-    <Frame className="pt-[4rem] bg-neutral min-h-screen">
+    <Frame navMode="dark" className="pt-[4rem] bg-neutral min-h-screen">
       <TextLargeCentered text="RACETREE Users" className="text-6xl font-bold text-center text-yellow-500 m-5" />
-      <TextLargeCentered text="Search By Steam ID or RaceTree ID" className="text-lg font-bold text-center text-white m-5" />
+      <TextLargeCentered text="Search By Steam ID, RaceTree ID, or Team" className="text-lg font-bold text-center text-white m-5" />
       <SearchBar className="px-4 py-2 m-5 w-96 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" />
       <Desktop>
       <Grid columns={4} gap={3} className="p-5 max-w-7xl ">

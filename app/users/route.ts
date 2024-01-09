@@ -20,6 +20,17 @@ export async function GET(request: Request) {
     if (raceTreeId) {
       const raceTreeAccount = await prisma.user.findUnique({
         where: { id: Number(raceTreeId) },
+        select: {
+          id: true,
+          steamId: true,
+          name: true,
+          createdAt: true,
+          updatedAt: true,
+          nickname: true,
+          aboutMe: true,
+          views: true,
+          reputation: true,
+        },
       });
 
       if (!raceTreeAccount) {
@@ -34,6 +45,17 @@ export async function GET(request: Request) {
     if (steamId) {
       const steamAccount = await prisma.user.findFirst({
         where: { steamId: String(steamId) },
+        select: {
+          id: true,
+          steamId: true,
+          name: true,
+          createdAt: true,
+          updatedAt: true,
+          nickname: true,
+          aboutMe: true,
+          views: true,
+          reputation: true,
+        },
       });
 
       if (!steamAccount) {
@@ -45,7 +67,19 @@ export async function GET(request: Request) {
       return Response.json(steamAccount, { status: 200 });
     }
     // If no query parameters are provided, return all accounts
-    const accounts = await prisma.user.findMany();
+    const accounts = await prisma.user.findMany({
+      select: {
+        id: true,
+        steamId: true,
+        name: true,
+        createdAt: true,
+        updatedAt: true,
+        nickname: true,
+        aboutMe: true,
+        views: true,
+        reputation: true,
+      },
+    });
     if (!accounts) {
       return Response.json({ message: "No accounts found" }, { status: 404 });
     }

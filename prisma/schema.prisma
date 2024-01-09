@@ -13,11 +13,11 @@ model User {
   steamId   String    @unique
   email     String    @unique
   name      String?
-  password  String
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   nickname  String?
   aboutMe   String?
+  reputation Int      @default(0)
   views     Int       @default(0)
   leagues   League[]
   teams     Team[]

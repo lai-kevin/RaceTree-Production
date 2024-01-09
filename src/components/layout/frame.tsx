@@ -4,15 +4,17 @@ import NavBar from "@/src/components/global/navbar";
 type FrameProps = {
   children: React.ReactNode;
   className?: string;
+  navMode?: "light" | "dark";
 };
 
 const Frame: React.FC<FrameProps> = ({
   children,
+  navMode = "light",
   className,
 }) => {
   return (
     <div data-theme="retro">
-      <NavBar />
+      <NavBar mode={navMode} />
       <main
         className={className}
       >
