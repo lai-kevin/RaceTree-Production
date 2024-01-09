@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Frame from "@/src/components/layout/frame";
 import Grid from "@/src/components/layout/grid";
 import UserProfile from "@/src/components/cards/userCardSmall";
@@ -56,11 +56,13 @@ const users4 = [
 ];
 
 interface UserResponse {
+  steamid: string;
   name: string;
   reputation: number;
   nickname: string;
   steamId: string;
   views: number;
+  avatarfull: string;
 }
 
 interface TextLargeCenteredProps {
@@ -68,55 +70,70 @@ interface TextLargeCenteredProps {
   className?: string;
 }
 
-const TextLargeCentered: React.FC<TextLargeCenteredProps> = ({ text, className }) => {
-  return (
-    <div className={className}>
-      {text}
-    </div>
-  );
+const TextLargeCentered: React.FC<TextLargeCenteredProps> = ({
+  text,
+  className,
+}) => {
+  return <div className={className}>{text}</div>;
 };
 
 export default function Browse() {
   const [users, setUsers] = useState<UserResponse[]>([]);
+  const [steamUsers, setSteamUsers] = useState<UserResponse[]>([]);
 
   // Fetch users
   useEffect(() => {
+    const fetchSteamUsers = async (raceTreeUsers: UserResponse[]) => {
+      let steamIds = `[${Array.from(
+        raceTreeUsers,
+        (raceTreeUser: UserResponse) => raceTreeUser.steamId
+      ).join(",")}]`;
+      fetch(`http://localhost:3000/info?steam_ids=${steamIds}`)
+        .then((res) => res.json())
+        .then((data): void => {
+          setSteamUsers(data);
+        });
+    };
+
+    // Fetch users
     fetch("http://localhost:3000/users/browse")
       .then((res) => res.json())
-      .then((data): void => {
-        console.log(data)
-        setUsers(data);
+      .then((raceTreeUsers): void => {
+        fetchSteamUsers(raceTreeUsers);
+        setUsers(raceTreeUsers);
       });
   }, []);
 
-  // Fetch steam user summaries
-  useEffect(() => {
-    users.forEach((user) => {
-      getPlayerSummary(user.steamId).then((res) => {
-        console.log(res);
-      });
-    });
-  }, [users]);
-
   return (
     <Frame navMode="dark" className="pt-[4rem] bg-neutral min-h-screen">
-      <TextLargeCentered text="RACETREE Users" className="text-6xl font-bold text-center text-yellow-500 m-5" />
-      <TextLargeCentered text="Search By Steam ID, RaceTree ID, or Team" className="text-lg font-bold text-center text-white m-5" />
+      <TextLargeCentered
+        text="RACETREE Users"
+        className="text-6xl font-bold text-center text-yellow-500 m-5"
+      />
+      <TextLargeCentered
+        text="Search By Steam ID, RaceTree ID, or Team"
+        className="text-lg font-bold text-center text-white m-5"
+      />
       <SearchBar className="px-4 py-2 m-5 w-96 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300" />
-      <Desktop>
-      <Grid columns={4} gap={3} className="p-5 max-w-7xl ">
-        {users.map((user: UserResponse) => (
-          <UserProfile key={user.name} profilePicture="" reputation={user.reputation} username={user.name} nickname={user.nickname} />
-        ))}
-      </Grid>
-      </Desktop>
-      <Mobile>
-        <Grid columns={1} gap={3} className="p-5 max-w-7xl ">
-          {users.map((user: UserResponse) => (
-            <UserProfile key={user.name} profilePicture="" reputation={user.reputation} username={user.name} nickname={user.nickname}  />
-          ))}
-        </Grid>
-      </Mobile>
+
+      <div className="flex justify-center">
+          <Grid columns={1} gap={3} className="p-5 max-w-7xl ">
+            {users.map((user: UserResponse) => (
+              <UserProfile
+                key={user.name}
+                profilePicture={
+                  steamUsers.find(
+                    (steamUser: UserResponse) =>
+                      steamUser.steamid === user.steamId
+                  )?.avatarfull
+                }
+                reputation={user.reputation}
+                username={user.name}
+                nickname={user.nickname}
+              />
+            ))}
+          </Grid>
+      </div>
     </Frame>
   );
 }
