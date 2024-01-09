@@ -26,9 +26,9 @@ const UserProfile: React.FC<UserProfileProps> = ({
           className="rounded-t-xl"
         />
         <div className="flex flex-col justify-center align-middle text-center items-center">
-          <h1 className="card-title text-xl">KEVIN_AMG</h1>
+          <h1 className="card-title text-xl">{username}</h1>
           <div className="text-center">
-            <h2 className="text-sm text-gray-600">&quot;The Falcon&quot;</h2>
+            <h2 className="text-sm text-gray-600">&quot;{nickname}&quot;</h2>
           </div>
           <div className="items-center gap-5 text-sm">
             <h3>Reputation {reputation}</h3>

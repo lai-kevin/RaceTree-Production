@@ -10,7 +10,7 @@ export async function GET(request: Request) {
     if (page) {
       const accounts = await prisma.user.findMany({
         skip: Number(page) * 20,
-        take: 10,
+        take: 20,
         select: {
           id: true,
           steamId: true,
