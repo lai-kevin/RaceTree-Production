@@ -38,10 +38,13 @@ export const getPlayerSummary = (steamID64Array: string) => {
 
 export const getOwnedGames = (steamID64: string) => {
   return new Promise((resolve, reject) => {
-    const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${steamID64}&format=json&include_appinfo=true`;
+    const url = `http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.STEAM_API_KEY}&steamid=${steamID64}&format=json`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
+        if (!data.response.games) {
+          reject("No games found");
+        }
         if (data.response.games.length > 0) {
           resolve(data.response.games);
         } else {

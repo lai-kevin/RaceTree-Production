@@ -23,9 +23,6 @@ const LandingScreen = () => {
                 Browse Profiles
               </button>
             </Link>
-            <button className="link btn-secondary hover:text-blue-500">
-              Checkout RaceTree API!
-            </button>
           </div>
         </div>
       </div>

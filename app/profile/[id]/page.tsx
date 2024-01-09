@@ -60,13 +60,13 @@ export default function Profile({ params }: { params: { id: string } }) {
                 aboutme={user.aboutMe}
               />
               <AboutMe aboutMe={user.aboutMe} />
-              <Games />
+              <Games steamId={user.steamId}/>
               <Clips />
             </Mobile>
 
             <Desktop>
               <div className="flex flex-row max-h-screen">
-                <div className="w-1/2">
+                <div className="w-1/2 flex-grow">
                   <User
                     profilePicture={steamSummary.avatarfull}
                     reputation={user.reputation}
@@ -77,8 +77,8 @@ export default function Profile({ params }: { params: { id: string } }) {
                   />
                   <AboutMe aboutMe={user.aboutMe}/>
                 </div>
-                <div className="w-1/2">
-                  <Games />
+                <div className="w-1/2 flex-grow">
+                  <Games steamId={user.steamId}/>
                   <Clips />
                 </div>
               </div>
