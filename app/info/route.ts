@@ -14,5 +14,6 @@ export async function GET(request: Request) {
   if (!data) {
     return Response.json({ message: "No player found" }, { status: 404 });
   }
+  
   return Response.json(data, { status: 200 });
 }
