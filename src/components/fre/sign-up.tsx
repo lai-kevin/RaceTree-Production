@@ -10,7 +10,7 @@ export default function SignUpForm() {
   const [pendingVerification, setPendingVerification] = useState(false);
   const [code, setCode] = useState("");
   // start the sign up process.
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     if (!isLoaded) {
       return;
