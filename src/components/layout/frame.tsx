@@ -15,7 +15,7 @@ const Frame: React.FC<FrameProps> = ({
 }) => {
   return (
     <div data-theme="retro">
-      <NavBar mode={navMode} />
+      <NavBar mode={navMode} showSignUp={true}/>
       <main
         className={className}
       >

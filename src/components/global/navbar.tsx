@@ -38,8 +38,10 @@ const ProfileButton = () => {
 
 interface NavBarProps {
   mode?: "light" | "dark";
+  showSignUp?: boolean;
+  showSignIn?: boolean;
 }
-const NavBar:React.FC<NavBarProps> = ({mode}) => {
+const NavBar:React.FC<NavBarProps> = ({mode, showSignUp, showSignIn}) => {
   if (!mode) mode = "light";
   var bgColor = (mode === "light") ? "bg-base-100" : "bg-neutral";
   var textColor = (mode === "light") ? "text-base-content" : "text-base-100";
@@ -54,9 +56,12 @@ const NavBar:React.FC<NavBarProps> = ({mode}) => {
       </Link>
       </div>
       <div className="flex-none"></div>
-      <Link href="/sign-up">
-      <button className="btn btn-ghost btn-sm rounded-btn bg-primary">Sign Up</button>
-      </Link>
+
+      {showSignUp && (
+        <Link href="/sign-up">
+          <button className="btn btn-ghost btn-sm rounded-btn bg-primary">Sign Up</button>
+        </Link>
+      )}
     </div>
   );
 };
